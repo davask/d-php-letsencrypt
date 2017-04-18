@@ -58,6 +58,9 @@
         },{
             "name": "DWL_CERTBOT_DEBUG",
             "label": "Certbot debug mode [true]"
+        },{
+            "name": "DWL_PHP_DATETIMEZONE",
+            "label": "php.ini > date.timezone [Europe/Paris]"
         }
     ],
     "volumes": [

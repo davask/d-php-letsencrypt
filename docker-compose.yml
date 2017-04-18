@@ -18,6 +18,7 @@ d-php-letsencrypt:
     DWL_SSLKEY_CN: davaskweblimited.com
     DWL_CERTBOT_EMAIL: docker@davaskweblimited.com
     DWL_CERTBOT_DEBUG: 'false'
+    DWL_PHP_DATETIMEZONE: Europe/Paris
   image: davask/d-php-letsencrypt:5.6-a2.4-u14.04
   hostname: localhost
   net: bridge
