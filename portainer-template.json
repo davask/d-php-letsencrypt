@@ -5,7 +5,9 @@
     "logo": "http://www.pngall.com/wp-content/uploads/2016/05/PHP-Logo.png",
     "image": "davask/d-php-letsencrypt:5.6-a2.4-u14.04",
     "ports": [
-        "22/tcp"
+        "22/tcp",
+        "80/tcp",
+        "443/tcp"
     ],
     "env": [
         {
@@ -59,11 +61,11 @@
         }
     ],
     "volumes": [
-        "/home/username,
-/var/log/apache2,
-/etc/apache2/sites-available,
-/etc/apache2/ssl,
-/etc/letsencrypt"
+        "/home/username",
+        "/var/log/apache2",
+        "/etc/apache2/sites-available",
+        "/etc/apache2/ssl",
+        "/etc/letsencrypt"
     ]
   }
 ]
