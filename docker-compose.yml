@@ -25,7 +25,7 @@ d-php-letsencrypt:
   volumes:
   - /home/dwl/docker-images/app/d-php-letsencrypt/build/etc/letsencrypt:/etc/letsencrypt
   - /home/dwl/docker-images/app/d-php-letsencrypt/build/etc/apache2/ssl:/etc/apache2/ssl
-  - /home/dwl/docker-images/app/d-php-letsencrypt/volumes/proxy/log/localhost/apache2:/var/log/apache2
+  - /home/dwl/docker-images/app/d-php-letsencrypt/volumes/home/username/log/localhost/apache2:/var/log/apache2
   - /home/dwl/docker-images/app/d-php-letsencrypt/volumes/home/username/http/app/sites-available:/etc/apache2/sites-available
   - /home/dwl/docker-images/app/d-php-letsencrypt/volumes/home/username/files:/home/username/files
   working_dir: /var/www/html

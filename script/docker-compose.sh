@@ -36,7 +36,7 @@ echo "d-php-letsencrypt:
   volumes:
   - ${buildDir}/etc/letsencrypt:/etc/letsencrypt
   - ${buildDir}/etc/apache2/ssl:/etc/apache2/ssl
-  - ${rootDir}/volumes/proxy/log/localhost/apache2:/var/log/apache2
+  - ${rootDir}/volumes/home/username/log/localhost/apache2:/var/log/apache2
   - ${rootDir}/volumes/home/username/http/app/sites-available:/etc/apache2/sites-available
   - ${rootDir}/volumes/home/username/files:/home/username/files
   working_dir: /var/www/html

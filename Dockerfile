@@ -2,6 +2,9 @@ FROM davask/d-apache-letsencrypt:2.4-u14.04
 MAINTAINER davask <docker@davaskweblimited.com>
 LABEL dwl.app.language="php5.6"
 
+ENV DWL_PHP_VERSION 5.6
+ENV DWL_PHP_DATETIMEZONE Europe/Paris
+
 # Update packages
 RUN apt-get update
 RUN apt-get install -y software-properties-common
@@ -35,6 +38,7 @@ RUN apt-get install -y memcached
 RUN apt-get install -y sendmail
 RUN rm -rf /var/lib/apt/lists/*
 
+COPY ./build/dwl/php.sh /dwl/php.sh
 COPY ./build/dwl/sendmail.sh /dwl/sendmail.sh
 COPY ./build/dwl/init.sh /dwl/init.sh
 

@@ -13,6 +13,9 @@ echo "FROM davask/d-apache-letsencrypt:${parentBranch}
 MAINTAINER davask <docker@davaskweblimited.com>
 LABEL dwl.app.language=\"php${PHP_VERSION}\"" > ${rootDir}/Dockerfile
 echo "
+ENV DWL_PHP_VERSION ${PHP_VERSION}
+ENV DWL_PHP_DATETIMEZONE Europe/Paris
+
 # Update packages
 RUN apt-get update
 RUN apt-get install -y software-properties-common
@@ -46,6 +49,7 @@ RUN apt-get install -y memcached
 RUN apt-get install -y sendmail
 RUN rm -rf /var/lib/apt/lists/*
 
+COPY ./build/dwl/php.sh /dwl/php.sh
 COPY ./build/dwl/sendmail.sh /dwl/sendmail.sh
 COPY ./build/dwl/init.sh /dwl/init.sh
 " >> ${rootDir}/Dockerfile
