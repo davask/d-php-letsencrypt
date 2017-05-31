@@ -11,6 +11,7 @@ buildDir=${4};
 
 echo "FROM davask/d-apache-letsencrypt:${parentBranch}
 MAINTAINER davask <docker@davaskweblimited.com>
+USER root
 LABEL dwl.app.language=\"php${PHP_VERSION}\"" > ${rootDir}/Dockerfile
 echo "
 ENV DWL_PHP_VERSION ${PHP_VERSION}
