@@ -20,33 +20,26 @@ ENV DWL_PHP_DATETIMEZONE Europe/Paris
 # Update packages
 RUN apt-get update
 
-# INSTALL PHP5.5.9 - see http://packages.ubuntu.com/search?keywords=php5
-# RUN apt-get install -y php5
-# INSTALL PHP5.6.23 - https://launchpad.net/~ondrej/+archive/ubuntu/php
-RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
-# INSTALL PHP7.0.15 - see http://packages.ubuntu.com/search?keywords=php7
-# RUN apt-get install -y php7
-
-RUN apt-get update
-RUN apt-get install -y php${PHP_VERSION}
-RUN apt-get install -y php${PHP_VERSION}-mcrypt
-RUN apt-get install -y php${PHP_VERSION}-mbstring
-RUN apt-get install -y php${PHP_VERSION}-mysql
-RUN apt-get install -y php${PHP_VERSION}-gd
-RUN apt-get install -y php${PHP_VERSION}-curl
-RUN apt-get install -y php${PHP_VERSION}-memcached
-RUN apt-get install -y php${PHP_VERSION}-cli
-RUN apt-get install -y php${PHP_VERSION}-readline
-RUN apt-get install -y php${PHP_VERSION}-mysqlnd
-RUN apt-get install -y php${PHP_VERSION}-json
-RUN apt-get install -y php${PHP_VERSION}-xsl
-RUN apt-get install -y php${PHP_VERSION}-xml
-RUN apt-get install -y php${PHP_VERSION}-intl
-RUN apt-get install -y libapache2-mod-php${PHP_VERSION}
+RUN apt-get install -y php${PHP_VERSION:0:1}
+RUN apt-get install -y php${PHP_VERSION:0:1}-mcrypt
+RUN apt-get install -y php${PHP_VERSION:0:1}-mysql
+RUN apt-get install -y php${PHP_VERSION:0:1}-gd
+RUN apt-get install -y php${PHP_VERSION:0:1}-curl
+RUN apt-get install -y php${PHP_VERSION:0:1}-memcached
+RUN apt-get install -y php${PHP_VERSION:0:1}-cli
+# RUN apt-get install -y php${PHP_VERSION:0:1}-mbstring
+RUN apt-get install -y php${PHP_VERSION:0:1}-readline
+RUN apt-get install -y php${PHP_VERSION:0:1}-mysqlnd
+RUN apt-get install -y php${PHP_VERSION:0:1}-json
+RUN apt-get install -y php${PHP_VERSION:0:1}-xsl
+# RUN apt-get install -y php${PHP_VERSION:0:1}-xml
+RUN apt-get install -y php${PHP_VERSION:0:1}-intl
+RUN apt-get install -y libapache2-mod-php${PHP_VERSION:0:1}
 RUN apt-get install -y memcached
 
 # sendmail required to use php mail()
 RUN apt-get install -y sendmail
+RUN apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/*
 
 COPY ./build/dwl/php.sh /dwl/php.sh
