@@ -31,7 +31,7 @@ RUN apt-get install -y php${PHP_VERSION:0:1}-cli
 RUN apt-get install -y php${PHP_VERSION:0:1}-readline
 RUN apt-get install -y php${PHP_VERSION:0:1}-mysqlnd
 RUN apt-get install -y php${PHP_VERSION:0:1}-json
-RUN apt-get install -y php${PHP_VERSION:0:1}-xsl
+# RUN apt-get install -y php${PHP_VERSION:0:1}-xsl
 # RUN apt-get install -y php${PHP_VERSION:0:1}-xml
 RUN apt-get install -y php${PHP_VERSION:0:1}-intl
 RUN apt-get install -y libapache2-mod-php${PHP_VERSION:0:1}

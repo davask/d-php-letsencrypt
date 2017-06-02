@@ -20,7 +20,7 @@ RUN apt-get install -y php5-cli
 RUN apt-get install -y php5-readline
 RUN apt-get install -y php5-mysqlnd
 RUN apt-get install -y php5-json
-RUN apt-get install -y php5-xsl
+# RUN apt-get install -y php5-xsl
 # RUN apt-get install -y php5-xml
 RUN apt-get install -y php5-intl
 RUN apt-get install -y libapache2-mod-php5
