@@ -1,1 +1,2 @@
-service sendmail start;
+#! /bin/bash
+sudo service sendmail start;
