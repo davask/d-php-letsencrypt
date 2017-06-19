@@ -38,7 +38,7 @@ RUN apt-get install -y libapache2-mod-php${PHP_VERSION:0:1}
 RUN apt-get install -y memcached
 
 # sendmail required to use php mail()
-RUN apt-get install -y sendmail
+RUN apt-get install -y sendmail-bin sendmail
 RUN apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/*
 
