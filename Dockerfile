@@ -7,24 +7,9 @@ ENV DWL_PHP_VERSION 5.6
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
 # Update packages
-RUN apt-get update
-
-RUN apt-get install -y php5
-RUN apt-get install -y php5-mcrypt
-RUN apt-get install -y php5-mysql
-RUN apt-get install -y php5-gd
-RUN apt-get install -y php5-curl
-RUN apt-get install -y php5-memcached
-RUN apt-get install -y php5-cli
-# RUN apt-get install -y php5-mbstring
-RUN apt-get install -y php5-readline
-RUN apt-get install -y php5-mysqlnd
-RUN apt-get install -y php5-json
-# RUN apt-get install -y php5-xsl
-# RUN apt-get install -y php5-xml
-RUN apt-get install -y php5-intl
-RUN apt-get install -y libapache2-mod-php5
-RUN apt-get install -y memcached
+RUN apt-get update && apt-get install -y php5 php5-mcrypt php5-mysql php5-gd php5-curl php5-memcached php5-cli
+php5-readline php5-mysqlnd php5-json
+php5-intl libapache2-mod-php5 memcached
 
 # sendmail required to use php mail()
 RUN apt-get install -y sendmail-bin sendmail
@@ -34,4 +19,5 @@ RUN rm -rf /var/lib/apt/lists/*
 COPY ./build/dwl/php.sh /dwl/php.sh
 COPY ./build/dwl/sendmail.sh /dwl/sendmail.sh
 COPY ./build/dwl/init.sh /dwl/init.sh
+USER admin
 
