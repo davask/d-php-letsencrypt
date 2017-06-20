@@ -21,7 +21,7 @@ ENV DWL_PHP_DATETIMEZONE Europe/Paris
 RUN apt-get update && apt-get install -y \
 php${PHP_VERSION:0:1} \
 php${PHP_VERSION:0:1}-mcrypt \
-php${PHP_VERSION:0:1}-mysql \
+php${PHP_VERSION:0:1}-mysqlnd \
 php${PHP_VERSION:0:1}-gd \
 php${PHP_VERSION:0:1}-curl \
 php${PHP_VERSION:0:1}-memcached \
