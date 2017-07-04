@@ -1,16 +1,69 @@
 # dockerfile
 
-see [FROM IMAGE README.md](https://github.com/davask/d-apache2)
+## Exposed port
 
-### PHP 5.6 activation
+- 22
+- 80
+- 443
+## Default ENV values
+
+- DWL_LOCAL_LANG: 'en_US:en'
+- DWL_LOCAL: 'en_US.UTF-8'
+- DWL_USER_NAME: 'username'
+- DWL_SSH_ACCESS: 'false'
+- DWL_USER_ID: '1000'
+- DWL_USER_PASSWD: 'secret'
+- APACHE_LOCK_DIR: '/var/lock/apache2'
+- APACHE_PID_FILE: '/var/run/apache2.pid'
+- APACHE_RUN_USER: 'www-data'
+- APACHE_RUN_GROUP: 'www-data'
+- APACHE_LOG_DIR: '/var/log/apache2'
+- APACHE_RUN_DIR: '/var/run/apache2'
+- DWL_HTTP_SERVERADMIN: 'admin@localhost'
+- DWL_HTTP_DOCUMENTROOT: '/var/www/html'
+- DWL_HTTP_SHIELD: 'false'
+- DWL_SSLKEY_C: 'EU'
+- DWL_SSLKEY_ST: 'France'
+- DWL_SSLKEY_L: 'Vannes'
+- DWL_SSLKEY_O: 'davask web limited - docker container'
+- DWL_SSLKEY_CN: 'davaskweblimited.com'
+- APACHE_SSL_DIR: '/etc/apache2/ssl'
+- DWL_CERTBOT_EMAIL: 'admin@localhost'
+- DWL_CERTBOT_DEBUG: 'true'
+- DWL_PHP_DATETIMEZONE: 'Europe/Paris'
+## Available volumes
+
+- /home/username
+- /var/log/apache2
+- /etc/apache2/sites-available
+- /etc/apache2/ssl
+- /etc/letsencrypt
+## LABEL
+
+- dwl.server.os="apache-letsencrypt 5.6-a2.4-d8.8"
+
+- dwl.server.base="php-letsencrypt 5.6-a2.4-d8.8"
+
+- dwl.server.http="apache 5.6-a2.4-d8.8"
+
+## EXTRA
 
 #### comment
 
-- to avoid init error all conf file in /etc/apache2/sites-available have to be in the format of sub.domain.ext.conf like docker.davaskweblimited.com.conf
-
+- automatic configuration are handle for filename as [0-9]{4}\-subdomain\.domain\.tld\-[0-9]{2,3}\.conf\.dwl
 - On start all *.conf in /etc/apache2/sites-available are enabled
 
-## LABEL
+## virtualhost automatic conf
 
-> dwl.app.language="php5.6"
+```bash
 
+# ServerAdmin
+# DocumentRoot
+# ServerName
+# ServerAlias
+
+```
+
+
+- [test certificat](# https://www.ssllabs.com/ssltest/analyze.html?d=<sub.domain.tld>&latest
+)
