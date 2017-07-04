@@ -40,11 +40,11 @@
 - /etc/letsencrypt
 ## LABEL
 
-- dwl.server.os="apache-letsencrypt 5.6-a2.4-u14.04"
+- dwl.server.os="apache-letsencrypt 5.6-a2.4-u16.04"
 
-- dwl.server.base="php-letsencrypt 5.6-a2.4-u14.04"
+- dwl.server.base="php-letsencrypt 5.6-a2.4-u16.04"
 
-- dwl.server.http="apache 5.6-a2.4-u14.04"
+- dwl.server.http="apache 5.6-a2.4-u16.04"
 
 ## EXTRA
 
