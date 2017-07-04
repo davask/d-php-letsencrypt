@@ -22,6 +22,10 @@ php5-json \
 php5-intl \
 libapache2-mod-php5 \
 memcached
+
+RUN a2enmod proxy_fcgi setenvif
+RUN a2enconf php5-fpm
+
 RUN apt-get install -y \
 sendmail-bin \
 sendmail
