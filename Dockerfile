@@ -41,8 +41,7 @@ sendmail
 
 RUN echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/sendmail.mc; \
 echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/submit.mc; \
-sendmailconfig; \
-/usr/share/sendmail/update_auth
+sendmailconfig
 
 RUN apt-get upgrade -y && \
 apt-get autoremove -y && \
