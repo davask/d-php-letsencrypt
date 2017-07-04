@@ -21,7 +21,8 @@ php5-mysqlnd \
 php5-json \
 php5-intl \
 libapache2-mod-php5 \
-memcached \
+memcached
+RUN apt-get install -y \
 sendmail-bin \
 sendmail
 
