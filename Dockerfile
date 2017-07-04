@@ -39,8 +39,8 @@ RUN apt-get install -y \
 sendmail-bin \
 sendmail
 
-RUN echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/sendmail.mc \\
-echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/submit.mc \\
+RUN echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/sendmail.mc \
+echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/submit.mc \
 sendmailconfig
 
 RUN cat /etc/mail/sendmail.mc
