@@ -41,9 +41,6 @@ sendmail
 RUN echo 'include(/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/submit.mc \
 sendmailconfig
 
-RUN cat /etc/mail/sendmail.mc
-RUN cat /etc/mail/submit.mc
-
 RUN apt-get upgrade -y && \
 apt-get autoremove -y && \
 apt-get clean && \
