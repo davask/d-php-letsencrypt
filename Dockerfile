@@ -6,10 +6,9 @@ LABEL dwl.app.language="php7.0"
 ENV DWL_PHP_VERSION 7.0
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
-RUN DEB_VERSION="xenial"; \
-sed -i 's|^deb http://archive.ubuntu.com/ubuntu/  main restricted|deb http://archive.ubuntu.com/ubuntu/  main restricted multiverse|g' /etc/apt/sources.list; \
-sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ -updates main restricted|deb http://archive.ubuntu.com/ubuntu/ -updates main restricted multiverse|g' /etc/apt/sources.list; \
-sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ -security main restricted|deb http://archive.ubuntu.com/ubuntu/ -security main restricted multiverse|g' /etc/apt/sources.list; \
+RUN sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial main restricted multiverse|g' /etc/apt/sources.list; \
+sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted multiverse|g' /etc/apt/sources.list; \
+sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted multiverse|g' /etc/apt/sources.list; \
 cat /etc/apt/sources.list;
 COPY ./build/etc/apache2/conf-available/php5-fpm.conf /etc/apache2/conf-available/
 
