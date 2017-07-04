@@ -6,6 +6,8 @@ LABEL dwl.app.language="php5.6"
 ENV DWL_PHP_VERSION 5.6
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
+RUN cat /etc/apt/sources.list
+COPY ./build/etc/apache2/conf-available/php5-fpm.conf /etc/apache2/conf-available/
 # Update packages
 RUN apt-get update && apt-get install -y \
 php5 \
