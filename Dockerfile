@@ -6,7 +6,11 @@ LABEL dwl.app.language="php5.6"
 ENV DWL_PHP_VERSION 5.6
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
-RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list; \
+
+RUN sed -i 's|^deb http://deb.debian.org/debian jessie main|deb http://deb.debian.org/debian jessie main contrib non-free|g' /etc/apt/sources.list; \
+sed -i 's|^deb http://deb.debian.org/debian jessie-updates main|deb http://deb.debian.org/debian jessie-updates main contrib non-free|g' /etc/apt/sources.list; \
+sed -i 's|^deb http://deb.debian.org/debian jessie/updates main|deb http://deb.debian.org/debian jessie/updates main contrib non-free|g' /etc/apt/sources.list; \
+echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list; \
 echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list; \
 wget https://www.dotdeb.org/dotdeb.gpg -O /tmp/dotdeb.gpg; \
 apt-key add /tmp/dotdeb.gpg; \
