@@ -6,6 +6,9 @@ LABEL dwl.app.language="php5.6"
 ENV DWL_PHP_VERSION 5.6
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
+COPY ./build/etc/apache2/conf-available/php5-fpm.conf \
+/etc/apache2/conf-available/
+
 
 RUN sed -i 's|^deb http://deb.debian.org/debian jessie main|deb http://deb.debian.org/debian jessie main contrib non-free|g' /etc/apt/sources.list; \
 sed -i 's|^deb http://deb.debian.org/debian jessie-updates main|deb http://deb.debian.org/debian jessie-updates main contrib non-free|g' /etc/apt/sources.list; \
