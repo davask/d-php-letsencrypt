@@ -12,6 +12,8 @@ wget https://www.dotdeb.org/dotdeb.gpg -O /tmp/dotdeb.gpg; \
 apt-key add /tmp/dotdeb.gpg; \
 rm /tmp/dotdeb.gpg;
 
+RUN cat /etc/apt/sources.list
+
 # Update packages
 RUN apt-get update && apt-get install -y \
 php5 \
