@@ -6,11 +6,13 @@ LABEL dwl.app.language="php5.6"
 ENV DWL_PHP_VERSION 5.6
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
+COPY ./build/etc/apache2/conf-available/php5-fpm.conf \
+/etc/apache2/conf-available/
+
 RUN sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ trusty main|deb http://archive.ubuntu.com/ubuntu/ trusty main multiverse|g' /etc/apt/sources.list; \
 sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ trusty-updates main|deb http://archive.ubuntu.com/ubuntu/ trusty-updates main multiverse|g' /etc/apt/sources.list; \
 sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ trusty-security main|deb http://archive.ubuntu.com/ubuntu/ trusty-security main multiverse|g' /etc/apt/sources.list
 
-COPY ./build/etc/apache2/conf-available/php5-fpm.conf /etc/apache2/conf-available/
 
 RUN add-apt-repository ppa:ondrej/php
 
