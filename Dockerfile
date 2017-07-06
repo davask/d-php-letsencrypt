@@ -15,6 +15,7 @@ sed -i 's|^deb http://deb.debian.org/debian jessie-updates main|deb http://deb.d
 sed -i 's|^deb http://deb.debian.org/debian jessie/updates main|deb http://deb.debian.org/debian jessie/updates main contrib non-free|g' /etc/apt/sources.list; \
 echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list; \
 echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list; \
+echo 'deb http://deb.debian.org/debian stretch main' >> /etc/apt/sources.list; \
 wget https://www.dotdeb.org/dotdeb.gpg -O /tmp/dotdeb.gpg; \
 apt-key add /tmp/dotdeb.gpg; \
 rm /tmp/dotdeb.gpg;
