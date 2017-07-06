@@ -27,6 +27,9 @@ php7.0-readline \
 php7.0-mysqlnd \
 php7.0-json \
 php7.0-intl \
+php7.0-common \
+php7.0-opcache \
+libssl1.0.0 \
 libapache2-mod-php7.0 \
 libapache2-mod-fastcgi \
 memcached
