@@ -10,7 +10,6 @@ RUN sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial main restricted|deb 
 sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted multiverse|g' /etc/apt/sources.list; \
 sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted multiverse|g' /etc/apt/sources.list
 
-COPY ./build/etc/apache2/conf-available/php5-fpm.conf /etc/apache2/conf-available/
 
 RUN add-apt-repository ppa:ondrej/php
 

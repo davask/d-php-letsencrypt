@@ -36,6 +36,5 @@ echo ">> TSL initialized";
 echo ">> Apache2 initialized";
 
 . ${dwlDir}/php.sh
-. ${dwlDir}/sendmail.sh
-echo ">> Sendmail initialized";
+echo ">> Php initialized";
 
