@@ -32,6 +32,7 @@ php5.6-json \
 php5.6-intl \
 php5.6-common \
 php5.6-opcache \
+libssl1.1 \
 libapache2-mod-php5.6 \
 libapache2-mod-fastcgi \
 memcached
