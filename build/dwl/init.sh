@@ -38,3 +38,5 @@ echo ">> Apache2 initialized";
 . ${dwlDir}/php.sh
 echo ">> Php initialized";
 
+
+tail -f /dev/null;
