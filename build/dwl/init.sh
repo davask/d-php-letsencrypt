@@ -1,6 +1,6 @@
-#! /bin/sh -e
+#!/bin/bash
 
-cd .; cd -;
+cd ~/;
 
 dwlDir="/dwl";
 
@@ -38,3 +38,5 @@ echo ">> Apache2 initialized";
 . ${dwlDir}/php.sh
 echo ">> Php initialized";
 
+
+tail -f /dev/null;
