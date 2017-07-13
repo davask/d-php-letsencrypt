@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 DWL_PHP_VERSION="`php --version | grep -e '^PHP' | awk '{print $2}'`";
 DWL_PHP_VERSION="${PHP_VERSION:0:3}";
 if [ -f /etc/php/${DWL_PHP_VERSION}/apache2/php.ini ]; then
