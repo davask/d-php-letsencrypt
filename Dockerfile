@@ -1,53 +1,50 @@
-FROM davask/d-apache-letsencrypt:2.4-u16.04
+FROM davask/d-apache-letsencrypt:2.4-d8.8
 MAINTAINER davask <docker@davaskweblimited.com>
 USER root
-LABEL dwl.app.language="php5.6"
+LABEL dwl.app.language="php7.0"
 
-ENV DWL_PHP_VERSION 5.6
+ENV DWL_PHP_VERSION 7.0
 ENV DWL_PHP_DATETIMEZONE Europe/Paris
 
-COPY ./build/etc/apache2/conf-available/php5-fpm.conf \
-/etc/apache2/conf-available/
 
-RUN sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial main restricted multiverse|g' /etc/apt/sources.list; \
-sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted multiverse|g' /etc/apt/sources.list; \
-sed -i 's|^deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted|deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted multiverse|g' /etc/apt/sources.list
-
-
-RUN add-apt-repository ppa:ondrej/php
+RUN sed -i 's|^deb http://deb.debian.org/debian jessie main|deb http://deb.debian.org/debian jessie main contrib non-free|g' /etc/apt/sources.list; \
+sed -i 's|^deb http://deb.debian.org/debian jessie-updates main|deb http://deb.debian.org/debian jessie-updates main contrib non-free|g' /etc/apt/sources.list; \
+sed -i 's|^deb http://deb.debian.org/debian jessie/updates main|deb http://deb.debian.org/debian jessie/updates main contrib non-free|g' /etc/apt/sources.list; \
+echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list; \
+echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list; \
+echo 'deb http://deb.debian.org/debian stretch main' >> /etc/apt/sources.list; \
+wget https://www.dotdeb.org/dotdeb.gpg -O /tmp/dotdeb.gpg; \
+apt-key add /tmp/dotdeb.gpg; \
+rm /tmp/dotdeb.gpg;
 
 # Update packages
 RUN apt-get update && apt-get install -y \
-php5.6 \
-php5.6-fpm \
-php5.6-mcrypt \
-php5.6-mysqlnd \
-php5.6-gd \
-php5.6-curl \
-php5.6-memcached \
-php5.6-cli \
-php5.6-readline \
-php5.6-mysqlnd \
-php5.6-json \
-php5.6-intl \
-php5.6-common \
-php5.6-xml \
-php5.6-opcache \
+php7.0 \
+php7.0-fpm \
+php7.0-mcrypt \
+php7.0-mysqlnd \
+php7.0-gd \
+php7.0-curl \
+php7.0-memcached \
+php7.0-cli \
+php7.0-readline \
+php7.0-mysqlnd \
+php7.0-json \
+php7.0-intl \
+php7.0-common \
+php7.0-xml \
+php7.0-opcache \
 libssl1.1 \
-libapache2-mod-php5.6 \
+libapache2-mod-php7.0 \
 libapache2-mod-fastcgi \
 memcached
 
 RUN a2enmod actions fastcgi alias proxy_fcgi setenvif
-RUN a2enconf php5.6-fpm
+RUN a2enconf php7.0-fpm
 
 RUN apt-get install -y \
 sendmail-bin \
 sendmail
-
-RUN echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/sendmail.mc; \
-echo 'include(`/etc/mail/tls/starttls.m4'\'')dnl' | tee -a /etc/mail/submit.mc; \
-sendmailconfig
 
 RUN apt-get upgrade -y && \
 apt-get autoremove -y && \

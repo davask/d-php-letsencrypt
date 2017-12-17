@@ -1,9 +1,9 @@
 [
   {
-    "title": "PHP 5.6 + TSL",
-    "description": "p5.6 + a2.4 + u16.04 + letsencrypt",
+    "title": "PHP 7.0 + TSL",
+    "description": "p7.0 + a2.4 + d8.8 + letsencrypt",
     "logo": "http://www.pngall.com/wp-content/uploads/2016/05/PHP-Logo.png",
-    "image": "davask/d-php-letsencrypt:5.6-a2.4-u16.04",
+    "image": "davask/d-php-letsencrypt:7.0-a2.4-d8.8",
     "ports": [
         "22/tcp",
         "80/tcp",
