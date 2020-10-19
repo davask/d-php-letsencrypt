@@ -1,9 +1,9 @@
 [
   {
     "title": "PHP 7.0 + TSL",
-    "description": "p7.0 + a2.4 + d8.8 + letsencrypt",
+    "description": "p7.0 + a2.4 + d9.0 + letsencrypt",
     "logo": "http://www.pngall.com/wp-content/uploads/2016/05/PHP-Logo.png",
-    "image": "davask/d-php-letsencrypt:7.0-a2.4-d8.8",
+    "image": "davask/d-php-letsencrypt:7.0-a2.4-d9.0",
     "ports": [
         "22/tcp",
         "80/tcp",
@@ -51,7 +51,7 @@
             "label": "Organization Name (eg, company) [davask web limited - docker container]"
         }{
             "name": "DWL_SSLKEY_CN",
-            "label": "Common Name (e.g. server FQDN or YOUR name) [davaskweblimited.com]"
+            "label": "Common Name (e.g. server FQDN or YOUR name) [davask.com]"
         }{
             "name": "DWL_CERTBOT_EMAIL",
             "label": "Certbot email contact [admin@localhost]"

@@ -20,15 +20,15 @@ services:
       DWL_SSLKEY_C: 'EU'
       DWL_SSLKEY_ST: 'France'
       DWL_SSLKEY_L: 'Vannes'
-      DWL_SSLKEY_O: 'davask web limited - docker container'
-      DWL_SSLKEY_CN: 'davaskweblimited.com'
+      DWL_SSLKEY_O: 'davask - docker container'
+      DWL_SSLKEY_CN: 'davask.com'
       DWL_CERTBOT_EMAIL: 'admin@localhost'
       DWL_CERTBOT_DEBUG: 'true'
       DWL_PHP_DATETIMEZONE: 'Europe/Paris'
     tty: true
     stdin_open: true
     hostname: localhost
-    image: davask/d-php-letsencrypt:7.0-a2.4-d8.8
+    image: davask/d-php-letsencrypt:7.0-a2.4-d9.0
     networks:
       - dwlhost
     volumes:

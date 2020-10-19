@@ -1,13 +1,13 @@
 # dockerfile
 
-[![[dwl] php-letsencrypt:7.0-a2.4-d8.8 in prod][badge-shields]](https://hub.docker.com/r/davask/d-php-letsencrypt/)
-[![[dwl] php-letsencrypt:7.0-a2.4-d8.8 license][badge-license]](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fdavask%2Fd-php-letsencrypt?ref=badge_shield)
+[![[dwl] php-letsencrypt:7.0-a2.4-d9.0 in prod][badge-shields]](https://hub.docker.com/r/davask/d-php-letsencrypt/)
+[![[dwl] php-letsencrypt:7.0-a2.4-d9.0 license][badge-license]](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fdavask%2Fd-php-letsencrypt?ref=badge_shield)
 
-[![[dwl] php-letsencrypt:7.0-a2.4-d8.8 image][badge-docker]](https://hub.docker.com/r/davask/d-php-letsencrypt/)
+[![[dwl] php-letsencrypt:7.0-a2.4-d9.0 image][badge-docker]](https://hub.docker.com/r/davask/d-php-letsencrypt/)
 
-[badge-docker]: https://dockeri.co/image/davask/d-php-letsencrypt "[dwl] php-letsencrypt:7.0-a2.4-d8.8 image"
-[badge-shields]: https://img.shields.io/badge/davask%2Fd--php--letsencrypt-env_prod-brightgreen.svg?style=flat "[dwl] php-letsencrypt:7.0-a2.4-d8.8 in prod"
-[badge-license]: https://img.shields.io/badge/davask%2Fd--php--letsencrypt-license_MIT-brightgreen.svg?style=flat "[dwl] php-letsencrypt:7.0-a2.4-d8.8 license"
+[badge-docker]: https://dockeri.co/image/davask/d-php-letsencrypt "[dwl] php-letsencrypt:7.0-a2.4-d9.0 image"
+[badge-shields]: https://img.shields.io/badge/davask%2Fd--php--letsencrypt-env_prod-brightgreen.svg?style=flat "[dwl] php-letsencrypt:7.0-a2.4-d9.0 in prod"
+[badge-license]: https://img.shields.io/badge/davask%2Fd--php--letsencrypt-license_MIT-brightgreen.svg?style=flat "[dwl] php-letsencrypt:7.0-a2.4-d9.0 license"
 
 ## Exposed port
 
@@ -35,8 +35,8 @@
 - DWL_SSLKEY_C: 'EU'
 - DWL_SSLKEY_ST: 'France'
 - DWL_SSLKEY_L: 'Vannes'
-- DWL_SSLKEY_O: 'davask web limited - docker container'
-- DWL_SSLKEY_CN: 'davaskweblimited.com'
+- DWL_SSLKEY_O: 'davask - docker container'
+- DWL_SSLKEY_CN: 'davask.com'
 - APACHE_SSL_DIR: '/etc/apache2/ssl'
 - DWL_CERTBOT_EMAIL: 'admin@localhost'
 - DWL_CERTBOT_DEBUG: 'true'
@@ -49,11 +49,11 @@
 - /etc/letsencrypt
 ## LABEL
 
-- dwl.server.os="apache-letsencrypt 7.0-a2.4-d8.8"
+- dwl.server.os="apache-letsencrypt 7.0-a2.4-d9.0"
 
-- dwl.server.base="php-letsencrypt 7.0-a2.4-d8.8"
+- dwl.server.base="php-letsencrypt 7.0-a2.4-d9.0"
 
-- dwl.server.http="apache 7.0-a2.4-d8.8"
+- dwl.server.http="apache 7.0-a2.4-d9.0"
 
 ## EXTRA
 
