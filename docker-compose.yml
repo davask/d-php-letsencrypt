@@ -28,7 +28,7 @@ services:
     tty: true
     stdin_open: true
     hostname: localhost
-    image: davask/d-php-letsencrypt:7.0-a2.4-d9.0
+    image: davask/d-php-letsencrypt:7.3-a2.4-d9.0
     networks:
       - dwlhost
     volumes:
